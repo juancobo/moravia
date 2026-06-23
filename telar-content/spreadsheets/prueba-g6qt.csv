@@ -1,0 +1,5 @@
+step,object,x,y,zoom,page,question,answer,alt_text,layer1_button,layer1_content,layer2_button,layer2_content,clip_start,clip_end,loop
+paso,objeto,x,y,zoom,pagina,pregunta,respuesta,texto_alt,boton1,contenido1,boton2,contenido2,inicio_clip,fin_clip,bucle
+1,MFA_sheet14_strip02_frame15,0.5,0.5,1,,Qué está pasando?,Hay unos niños jugando,,,,,,,,
+2,MFA_sheet14_strip02_frame15,0.6637003078382202,0.4343166876461496,3.375,,El juego solitario,Vemos que están jugando dominó,,,,,,,,
+3,MFA_sheet14_strip02_frame15,0.5544732625142851,0.4497470990270793,8.916100448255998,,Próxima jugada,,,,,,,,,
