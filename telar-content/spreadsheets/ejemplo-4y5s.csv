@@ -1,0 +1,6 @@
+step,object,x,y,zoom,page,question,answer,alt_text,layer1_button,layer1_content,layer2_button,layer2_content,clip_start,clip_end,loop
+paso,objeto,x,y,zoom,pagina,pregunta,respuesta,texto_alt,boton1,contenido1,boton2,contenido2,inicio_clip,fin_clip,bucle
+1,MFA_sheet17_strip06_frame33,0.5,0.5,1,,¿Qué está pasando acá?,Una niña está trayendo agua,,,,,,,,
+2,MFA_sheet17_strip06_frame33,0.6212539809148924,0.2654228845492661,6.191736422399999,,¿Qué hacen los niños de atrás?,Están moviendo una carreta,,,,,,,,
+3,MFA_sheet17_strip06_frame33,0.9327612399655216,0.1635211185251992,4.299816959999999,,¿Cuál es este edificio?,,,Saber más,ejemplo-4y5s-edificio-tal.md,Profundizar,ejemplo-4y5s-la-arquitectura-en.md,,,
+4,cumplimos-18-anos,0.5,0.5,1,,¿Cuántos años cumplió el CDCM?,,,,,,,9.824133307351904,29.799202982850016,true
