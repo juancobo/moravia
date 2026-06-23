@@ -1,0 +1,36 @@
+{
+  "name": "telar",
+  "version": "1.5.2",
+  "description": "A minimal-computing framework for weaving IIIF images, audio, video, and texts into layered visual narratives.",
+  "private": true,
+  "license": "MIT",
+  "author": "The Telar authors",
+  "contributors": [
+    "Adelaida Ávila",
+    "Juan Cobo Betancourt",
+    "Natalie Cobo",
+    "Santiago Muñoz"
+  ],
+  "homepage": "https://telar.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UCSB-AMPLab/telar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UCSB-AMPLab/telar/issues"
+  },
+  "scripts": {
+    "build:js": "esbuild assets/js/telar-story/main.js --bundle --outfile=assets/js/telar-story.js --format=iife --sourcemap",
+    "test:js": "vitest run",
+    "test:js:watch": "vitest"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1",
+    "jsdom": "^29.0.1",
+    "vitest": "^4.1.8"
+  },
+  "dependencies": {
+    "@vimeo/player": "^2.30.4",
+    "lenis": "^1.3.23"
+  }
+}

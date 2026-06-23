@@ -1,0 +1,24 @@
+{%- comment -%}
+  Site footer — the slim attribution bar that closes every page. It carries a
+  copyright line (the author's name, falling back to the site title when no
+  author is configured) alongside a "Built with Telar" credit. That credit
+  links to the framework's source and, separately, to the matching release on
+  GitHub using the version recorded in site.telar.version, so a published site
+  always points back to the exact Telar release it was generated from. The bar
+  also names the project's stewards — Neogranadina and AMPL — and is styled with
+  Bootstrap utility classes for its light background and two-column layout.
+{%- endcomment -%}
+<footer class="site-footer mt-5 py-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0 text-muted">&copy; {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-0 text-muted">
+          Built with <a href="https://github.com/UCSB-AMPLab/telar" target="_blank" class="footer-link">Telar</a> <a href="https://github.com/UCSB-AMPLab/telar/releases" target="_blank" class="footer-link text-muted" style="font-size: 0.875rem;">v{{ site.telar.version }}</a>, a project of <a href="https://neogranadina.org" class="footer-link">Neogranadina</a> and <a href="https://ampl.clair.ucsb.edu" class="footer-link">AMPL</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

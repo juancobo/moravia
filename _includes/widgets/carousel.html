@@ -1,0 +1,63 @@
+<!--
+  Carousel Widget
+
+  Renders a swipeable slideshow of images — a Bootstrap carousel — with clickable
+  indicator dots and previous/next controls, advancing only on reader action
+  (data-bs-ride is false, so it never auto-plays). Produced by Telar's widget build
+  step, which supplies: widget_id (a unique slug scoping the carousel's id and its
+  control targets so multiple carousels coexist on a page); items (the slides, each
+  with image, alt, and optional caption and credit, the latter two rendered below
+  the image and passed through "safe" so authored markup survives); size_class (an
+  optional preset that adds a carousel-size-* modifier, ignored when "default"); and
+  base_url. Each image src is resolved at build time: absolute http(s) URLs are used
+  as given, while bare filenames are joined to {{ base_url }}/assets/images/, so the
+  same widget works for both externally hosted and site-local images.
+-->
+<div class="telar-widget telar-widget-carousel">
+  <div id="carousel-{{ widget_id }}" class="carousel slide{% if size_class and size_class != 'default' %} carousel-size-{{ size_class }}{% endif %}" data-bs-ride="false">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      {% for item in items %}
+      <button type="button" data-bs-target="#carousel-{{ widget_id }}"
+              data-bs-slide-to="{{ loop.index0 }}"
+              {% if loop.first %}class="active" aria-current="true"{% endif %}
+              aria-label="Slide {{ loop.index }}"></button>
+      {% endfor %}
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+      {% for item in items %}
+      <div class="carousel-item {% if loop.first %}active{% endif %}">
+        <div class="carousel-image-container">
+          <img src="{% if item.image.startswith('http://') or item.image.startswith('https://') %}{{ item.image }}{% else %}{{ base_url }}/assets/images/{{ item.image }}{% endif %}"
+               alt="{{ item.alt }}"
+               class="d-block carousel-image">
+        </div>
+        {% if item.caption or item.credit %}
+        <div class="carousel-caption-below">
+          {% if item.caption %}
+          <p class="caption-text">{{ item.caption | safe }}</p>
+          {% endif %}
+          {% if item.credit %}
+          <p class="caption-credit"><small>{{ item.credit | safe }}</small></p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button"
+            data-bs-target="#carousel-{{ widget_id }}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button"
+            data-bs-target="#carousel-{{ widget_id }}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
